@@ -17,6 +17,10 @@
 # API
 PRODUCT_SHIPPING_API_LEVEL := 27
 
+# HEH filename encryption is being dropped
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.filenames_mode=aes-256-cts
+
 # QCOM Decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
