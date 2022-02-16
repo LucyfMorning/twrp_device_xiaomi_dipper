@@ -72,6 +72,7 @@ BOARD_KERNEL_CMDLINE := \
     swiotlb=2048 \
     video=vfb:640x400,bpp=32,memsize=3072000
 
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1d84000.ufshc
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_KERNEL_BASE := 0x00000000
