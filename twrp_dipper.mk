@@ -14,31 +14,19 @@
 # limitations under the License.
 #
 
-# Release name
-PRODUCT_RELEASE_NAME := dipper
-
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
-$(call inherit-product, vendor/omni/config/gsm.mk)
+# Inherit from device
+$(call inherit-product, device/xiaomi/dipper/device.mk)
 
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := omni_dipper
+PRODUCT_NAME := twrp_dipper
 PRODUCT_DEVICE := dipper
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 8
 PRODUCT_MANUFACTURER := Xiaomi
-
-TARGET_VENDOR_PRODUCT_NAME := dipper
-TARGET_VENDOR_DEVICE_NAME := dipper
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=dipper \
-    BUILD_PRODUCT=dipper \
-    PRODUCT_NAME=dipper

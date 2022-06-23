@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_dipper.mk
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/twrp_dipper.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_dipper-userdebug \
-    omni_dipper-eng
+    twrp_dipper-userdebug \
+    twrp_dipper-eng
