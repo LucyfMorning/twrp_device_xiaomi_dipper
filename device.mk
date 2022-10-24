@@ -17,9 +17,6 @@
 # API
 PRODUCT_SHIPPING_API_LEVEL := 27
 
-# GSI
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # QCOM Decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
